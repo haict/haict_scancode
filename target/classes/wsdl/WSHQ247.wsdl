@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions targetNamespace="http://vn.fis.bgw" xmlns:apachesoap="http://xml.apache.org/xml-soap" xmlns:impl="http://vn.fis.bgw" xmlns:intf="http://vn.fis.bgw" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+<!--WSDL created by Apache Axis version: 1.4
+Built on Apr 22, 2006 (06:55:48 PDT)-->
+ <wsdl:types>
+  <schema targetNamespace="http://vn.fis.bgw" xmlns="http://www.w3.org/2001/XMLSchema">
+   <element name="WSProcess">
+    <complexType>
+     <sequence>
+      <element name="publicKey" type="xsd:string"/>
+      <element name="msg" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="WSProcessResponse">
+    <complexType>
+     <sequence>
+      <element name="WSProcessReturn" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="getPublicKey">
+    <complexType/>
+   </element>
+   <element name="getPublicKeyResponse">
+    <complexType>
+     <sequence>
+      <element name="getPublicKeyReturn" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+  </schema>
+ </wsdl:types>
+
+   <wsdl:message name="getPublicKeyResponse">
+
+      <wsdl:part element="impl:getPublicKeyResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="WSProcessRequest">
+
+      <wsdl:part element="impl:WSProcess" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="WSProcessResponse">
+
+      <wsdl:part element="impl:WSProcessResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="getPublicKeyRequest">
+
+      <wsdl:part element="impl:getPublicKey" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:portType name="WSHQ247">
+
+      <wsdl:operation name="WSProcess">
+
+         <wsdl:input message="impl:WSProcessRequest" name="WSProcessRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:WSProcessResponse" name="WSProcessResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getPublicKey">
+
+         <wsdl:input message="impl:getPublicKeyRequest" name="getPublicKeyRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:getPublicKeyResponse" name="getPublicKeyResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:portType>
+
+   <wsdl:binding name="WSHQ247SoapBinding" type="impl:WSHQ247">
+
+      <wsdlsoap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+
+      <wsdl:operation name="WSProcess">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="WSProcessRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="WSProcessResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getPublicKey">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="getPublicKeyRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="getPublicKeyResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:binding>
+
+   <wsdl:service name="WSHQ247Service">
+
+      <wsdl:port binding="impl:WSHQ247SoapBinding" name="WSHQ247">
+
+         <wsdlsoap:address location="http://localhost:8080/MB_GW/services/WSHQ247"/>
+
+      </wsdl:port>
+
+   </wsdl:service>
+
+</wsdl:definitions>

@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions targetNamespace="http://vn.fis.bgw" xmlns:apachesoap="http://xml.apache.org/xml-soap" xmlns:impl="http://vn.fis.bgw" xmlns:intf="http://vn.fis.bgw" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+<!--WSDL created by Apache Axis version: 1.4
+Built on Apr 22, 2006 (06:55:48 PDT)-->
+ <wsdl:types>
+  <schema targetNamespace="http://vn.fis.bgw" xmlns="http://www.w3.org/2001/XMLSchema">
+   <element name="reconcileProcess">
+    <complexType>
+     <sequence>
+      <element name="publicKey" type="xsd:string"/>
+      <element name="msg" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="reconcileProcessResponse">
+    <complexType>
+     <sequence>
+      <element name="reconcileProcessReturn" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+  </schema>
+ </wsdl:types>
+
+   <wsdl:message name="reconcileProcessRequest">
+
+      <wsdl:part element="impl:reconcileProcess" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="reconcileProcessResponse">
+
+      <wsdl:part element="impl:reconcileProcessResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:portType name="WSDCHQ247">
+
+      <wsdl:operation name="reconcileProcess">
+
+         <wsdl:input message="impl:reconcileProcessRequest" name="reconcileProcessRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:reconcileProcessResponse" name="reconcileProcessResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:portType>
+
+   <wsdl:binding name="WSDCHQ247SoapBinding" type="impl:WSDCHQ247">
+
+      <wsdlsoap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+
+      <wsdl:operation name="reconcileProcess">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="reconcileProcessRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="reconcileProcessResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:binding>
+
+   <wsdl:service name="WSDCHQ247Service">
+
+      <wsdl:port binding="impl:WSDCHQ247SoapBinding" name="WSDCHQ247">
+
+         <wsdlsoap:address location="http://localhost:8080/MB_GW/services/WSDCHQ247"/>
+
+      </wsdl:port>
+
+   </wsdl:service>
+
+</wsdl:definitions>
